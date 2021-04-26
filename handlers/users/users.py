@@ -18,6 +18,7 @@ URL = {
 async def location_button(message: types.Message, state: FSMContext):
     """ Handler of default button get location """
 
+    await state.reset_state()
     latitude = message.location.latitude
     longitude = message.location.longitude
     await LocationState.Location.set()
